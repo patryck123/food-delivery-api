@@ -1,20 +1,31 @@
-# Food Delivery API
+# 🍕 Food Delivery API
 
-API de delivery de comida com cardápio, pedidos, rastreamento de status e cálculo automático do valor total do pedido com base nos itens selecionados.
+Sistema de delivery com cardápio, pedidos e rastreamento de status de entrega.
 
-## Tecnologias
-Java 17 · Spring Boot 3.2 · Spring Data JPA · MySQL · Maven · Swagger/OpenAPI
+## 📋 Sobre o Projeto
 
-## Funcionalidades
-- Cardápio com categorias e disponibilidade de itens
-- Criação de pedidos com múltiplos itens
-- Cálculo automático do valor total
-- Rastreamento de status: PENDING → PREPARING → OUT_FOR_DELIVERY → DELIVERED
-- Consulta de pedidos por status
+Backend para um aplicativo de delivery de comida. Gerencia o cardápio do restaurante (categorias, pratos, preços), recebe pedidos com múltiplos itens e rastreia o status desde o recebimento até a entrega.
 
-## Como Executar
-```bash
-mvn spring-boot:run
-# Acesse: http://localhost:8094/swagger-ui.html
-```
-**Patryck Martins Langsdorff** — Java Back End Developer Junior | [LinkedIn](https://www.linkedin.com/in/patryck-martins-langsdorff)
+## ✨ Funcionalidades
+
+- ✅ Gerenciar cardápio (pratos e categorias)
+- ✅ Ativar/desativar itens do cardápio
+- ✅ Criar pedido com múltiplos itens
+- ✅ Calcular valor total do pedido
+- ✅ Acompanhar status: RECEIVED → PREPARING → ON_THE_WAY → DELIVERED
+- ✅ Cancelar pedido (apenas em RECEIVED)
+- ✅ Histórico de pedidos
+
+## 🔗 Endpoints
+
+| Método | Rota | Descrição |
+|--------|------|-----------|
+| GET/POST | `/api/menu` | Listar / Adicionar item |
+| PUT/DELETE | `/api/menu/{id}` | Editar / Remover item |
+| GET/POST | `/api/orders` | Listar / Criar pedido |
+| PATCH | `/api/orders/{id}/status` | Avançar status |
+| DELETE | `/api/orders/{id}` | Cancelar pedido |
+
+## 🛠️ Tecnologias
+
+- Java 17 · Spring Boot 3.2 · MySQL · Maven · Lombok
